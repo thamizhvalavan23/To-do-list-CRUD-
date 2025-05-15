@@ -7,7 +7,7 @@ export const Appcontext = createContext();
 
 const Appcontextprovider = (props)=> {
 
-    const [token , setToken] = useState(localStorage.getItem('token') ? localStorage.getItem('token') : " ")
+    const [token , setToken] = useState(localStorage.getItem('token') ? localStorage.getItem('token') : "" )
     const [atoken , setAtoken] = useState(localStorage.getItem('atoken') ? localStorage.getItem('atoken') : " ")
 
     const [useInfo , setUseInfo] = useState(false)
@@ -20,7 +20,7 @@ const Appcontextprovider = (props)=> {
 
         try {
 
-            const {data} = await axios.get("https://to-do-r09w.onrender.com/api/admin/user-details" ,{headers:{token}})
+            const {data} = await axios.get("http://localhost:8000/api/admin/user-details" ,{headers:{token}})
 
             if (data.success) {
                 
@@ -28,6 +28,8 @@ const Appcontextprovider = (props)=> {
                 
             }else{
                 console.log("data fetch error");
+                console.log(data.message);
+                
                 
             }
             

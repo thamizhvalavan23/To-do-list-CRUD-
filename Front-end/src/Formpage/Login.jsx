@@ -12,6 +12,8 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [country, setCountry] = useState("")
 
+    
+
 
     const { setToken  , token , fetchuserDetails , useInfo , navigate} = useContext(Appcontext);
 
@@ -32,6 +34,7 @@ const Login = () => {
                                 setToken(data.token)
                                 console.log("Register successfully." , token);
                                 toast.success(data.message);
+                              
                 
                               setName("");
                                  setEmail("");
@@ -49,6 +52,7 @@ const Login = () => {
                 setToken(data.token)
                 console.log("Login successfully.");
                 toast.success(data.message);
+               
             }else{
                 console.log('error');
                 toast.error(data.message)
