@@ -37,7 +37,7 @@ const Home = () => {
 
         try {
 
-            const {data} = await axios.delete("http://localhost:8000/api/admin/delete",{headers:{atoken}});
+            const {data} = await axios.delete("https://to-do-r09w.onrender.com/api/admin/delete",{headers:{atoken}});
 
             if (data.success) {
                 toast.success("Deleted successfully.")
@@ -64,7 +64,7 @@ const Home = () => {
 
         try {
 
-            const {data} = await axios.get("http://localhost:8000/api/admin/all-data",{});
+            const {data} = await axios.get("https://to-do-r09w.onrender.com/api/admin/all-data",{});
 
             if (data.success) {
 
@@ -93,7 +93,7 @@ const Home = () => {
             if (updateForm === "True"){
                 
                 
-                            const {data} = await axios.put("http://localhost:8000/api/admin/update-data",updatedData,{headers:{atoken}})
+                            const {data} = await axios.put("https://to-do-r09w.onrender.com/api/admin/update-data",updatedData,{headers:{atoken}})
                 
                             if (data.success) {
                                 console.log(data.taskmanegar);
@@ -114,7 +114,7 @@ const Home = () => {
                             
             }else{
 
-                const {data} = await axios.post("http://localhost:8000/api/admin/task-upload",{title , description , status , date})
+                const {data} = await axios.post("https://to-do-r09w.onrender.com/api/admin/task-upload",{title , description , status , date})
                 
                 if (data.success) {
                     setAtoken(data.token)

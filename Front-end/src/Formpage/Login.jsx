@@ -25,7 +25,7 @@ const Login = () => {
 
                 
                 
-                            const { data } = await axios.post("http://localhost:8000/api/admin/register",{name , email , password , country})
+                            const { data } = await axios.post("https://to-do-r09w.onrender.com/api/admin/register",{name , email , password , country})
                 
                             if (data.success) {
                                 localStorage.setItem('token', data.token)
@@ -43,7 +43,7 @@ const Login = () => {
                             }         
             } else{
 
-            const {data} = await axios.post("http://localhost:8000/api/admin/login",{email , password} , {headers : {token}});
+            const {data} = await axios.post("https://to-do-r09w.onrender.com/api/admin/login",{email , password} , {headers : {token}});
 
             if (data.success) {
                 setToken(data.token)
